@@ -1,66 +1,26 @@
-## Foundry
+## ERC20
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This is an implementation of ERC20 from scratch in Solidity.
+It follows the OpenZepplin ERC20 contract standard. 
 
-Foundry consists of:
+OpenZepplin's `ERC20` implements interfaces `IERC20`, `IERC20Metadata` and `IERC20Errors`.
+These interfaces are as it is similar to the standard, however my implementation of the contract 
+is very different from how it is implemented there.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### Contract
+This contract has
+1) `name() -> (string memory)`
+2) `decimals() -> (string memory)`
+3) `symbol() -> (string memory)`
+4) `totalSupply() -> (uint256)`
+5) `balanceOf(address account) -> (uint256)`
+6) `transfer(address to, uint256 value) -> bool`
+7) `allowance(address owner, address spender) -> uint256`
+8) `approve(address spender, uint256 value) -> bool`
+9) `transferFrom(address from, address to ,uint256 value) -> bool`
+10) `_addAllowance(address from, address approver, uint256 value)`
+11) `_deductAllowance(address from, address approver, uint256 value)`
+12) `_deductToken(address from, uint256 amount)`
+13) `_addToken(address to, uint256 amount)`
+14) `_mint(address to, uint256 amount)`
+15) `_burn(address from, uint256 amount)`
